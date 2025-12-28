@@ -3,54 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Puzzle Game</title>
-    <link rel="stylesheet" href="stlye.css">
-    <script src="script.js"></script>
+    <title>Puzzle-Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Puzzle Game</h1>
     <div class="overlay"></div>
-    <div class="drag" id = "drag">
-        <div class="dragbox">
-            <div class="images" id = "block1" draggable="true" ondragstart="drag(event)" style="--img:url(row-1-column-1.jpg)"></div>
-        </div>
-        <div class="dragbox">
-            <div class="images" id = "block2" draggable="true" ondragstart="drag(event)" style="--img:url(row-1-column-2.jpg)"></div>
-        </div>
-        <div class="dragbox">
-            <div class="images" id = "block3" draggable="true" ondragstart="drag(event)" style="--img:url(row-1-column-3.jpg)"></div>
-        </div>
-        <div class="dragbox">
-            <div class="images" id = "block4" draggable="true" ondragstart="drag(event)" style="--img:url(row-2-column-1.jpg)"></div>
-        </div>
-        <div class="dragbox">
-            <div class="images" id = "block5" draggable="true" ondragstart="drag(event)" style="--img:url(row-2-column-2.jpg)"></div>
-        </div>
-        <div class="dragbox">
-            <div class="images" id = "block6" draggable="true" ondragstart="drag(event)" style="--img:url(row-2-column-3.jpg)"></div>
-        </div>
-        <div class="dragbox">
-            <div class="images" id = "block7" draggable="true" ondragstart="drag(event)" style="--img:url(row-3-column-1.jpg)"></div>
-        </div>
-        <div class="dragbox">
-            <div class="images" id = "block8" draggable="true" ondragstart="drag(event)" style="--img:url(row-3-column-2.jpg)"></div>
-        </div>
-        <div class="dragbox">
-            <div class="images" id = "block9" draggable="true" ondragstart="drag(event)" style="--img:url(row-3-column-3.jpg)"></div>
-        </div>
-    </div>
-    <div class="drop">
-        <div class="dropbox" ondrop="drop(event)" ondragover="dropOver(event)"></div>
-        <div class="dropbox" ondrop="drop(event)" ondragover="dropOver(event)" ></div>
-        <div class="dropbox" ondrop="drop(event)" ondragover="dropOver(event)" ></div>
-        <div class="dropbox" ondrop="drop(event)" ondragover="dropOver(event)" ></div>
-        <div class="dropbox" ondrop="drop(event)" ondragover="dropOver(event)" ></div>
-        <div class="dropbox" ondrop="drop(event)" ondragover="dropOver(event)" ></div>
-        <div class="dropbox" ondrop="drop(event)" ondragover="dropOver(event)" ></div>
-        <div class="dropbox" ondrop="drop(event)" ondragover="dropOver(event)" ></div>
-        <div class="dropbox" ondrop="drop(event)" ondragover="dropOver(event)" ></div>
-    </div>
-    <button id ="reset" onclick="window.location.reload()" >Reset Puzzle</button>
     
+    <header>
+        <h1>Puzzle</h1>
+        <p class="subtitle">Drag the pieces to restore the kingdom</p>
+    </header>
+
+    <main class="game-container">
+        <div class="drag-zone" id="drag">
+            <div class="dragbox"><div class="images" id="block1" draggable="true" ondragstart="drag(event)" style="--img:url(row-1-column-1.jpg)"></div></div>
+            <div class="dragbox"><div class="images" id="block2" draggable="true" ondragstart="drag(event)" style="--img:url(row-1-column-2.jpg)"></div></div>
+            <div class="dragbox"><div class="images" id="block3" draggable="true" ondragstart="drag(event)" style="--img:url(row-1-column-3.jpg)"></div></div>
+            <div class="dragbox"><div class="images" id="block4" draggable="true" ondragstart="drag(event)" style="--img:url(row-2-column-1.jpg)"></div></div>
+            <div class="dragbox"><div class="images" id="block5" draggable="true" ondragstart="drag(event)" style="--img:url(row-2-column-2.jpg)"></div></div>
+            <div class="dragbox"><div class="images" id="block6" draggable="true" ondragstart="drag(event)" style="--img:url(row-2-column-3.jpg)"></div></div>
+            <div class="dragbox"><div class="images" id="block7" draggable="true" ondragstart="drag(event)" style="--img:url(row-3-column-1.jpg)"></div></div>
+            <div class="dragbox"><div class="images" id="block8" draggable="true" ondragstart="drag(event)" style="--img:url(row-3-column-2.jpg)"></div></div>
+            <div class="dragbox"><div class="images" id="block9" draggable="true" ondragstart="drag(event)" style="--img:url(row-3-column-3.jpg)"></div></div>
+        </div>
+
+        <div class="drop-zone">
+            <div class="dropbox" id="dropbox1" ondrop="drop(event)" ondragover="dropOver(event)"></div>
+            <div class="dropbox" id="dropbox2" ondrop="drop(event)" ondragover="dropOver(event)"></div>
+            <div class="dropbox" id="dropbox3" ondrop="drop(event)" ondragover="dropOver(event)"></div>
+            <div class="dropbox" id="dropbox4" ondrop="drop(event)" ondragover="dropOver(event)"></div>
+            <div class="dropbox" id="dropbox5" ondrop="drop(event)" ondragover="dropOver(event)"></div>
+            <div class="dropbox" id="dropbox6" ondrop="drop(event)" ondragover="dropOver(event)"></div>
+            <div class="dropbox" id="dropbox7" ondrop="drop(event)" ondragover="dropOver(event)"></div>
+            <div class="dropbox" id="dropbox8" ondrop="drop(event)" ondragover="dropOver(event)"></div>
+            <div class="dropbox" id="dropbox9" ondrop="drop(event)" ondragover="dropOver(event)"></div>
+        </div>
+    </main>
+
+    <button id="reset" onclick="window.location.reload()">Reset Puzzle</button>
+
+    <div id="win-modal" class="modal">
+        <div class="modal-content">
+            <h2>✨ Quest Complete! ✨</h2>
+            <p>You have restored the magical landscape.</p>
+            <button id ="playAgain"  onclick="window.location.reload()">Play Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
